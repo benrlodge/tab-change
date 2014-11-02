@@ -1,0 +1,154 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>tabChange.js | from benrlodge.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:100,300,400' rel='stylesheet' type='text/css'>
+
+<style>
+body{
+  background-color: #000 ;
+  background-image: url('bg.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+h1, h2{
+  font-family: 'Lato', sans-serif;
+}
+h1{
+  margin-bottom: 15px;
+  text-shadow: 0px 2px 7px rgba(0,0,0, 0.9);
+}
+.codelink{
+    font-family: "Lucida Console", Monaco, monospace;
+    display: block;
+    margin-bottom: 40px;
+}
+a,p{
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-decoration: none;
+  line-height: 1.7;
+  text-shadow: 0px 2px 5px rgba(0,0,0, 0.9);
+}
+
+h1{
+  font-size: 50px;
+  font-weight: 400;
+}
+h1 span{
+  font-weight: 100;
+}
+.container{
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+.container a{
+  color: #fff;
+}
+.countDisplay{
+  display: none;
+}
+footer{
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+footer a{
+  color: blue;
+}
+.preload{
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+</style>
+
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "35f07b4c-c7b4-4676-b1b5-1c1495216bff", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+</head>
+   
+
+<body>
+
+<div class='container'>
+  <h1>tabChange<span>.js</span></h1>
+  <a class='codelink' href="https://github.com/benrlodge/tab-change"> &lt;CODE ON GITHUB/&gt; </a>
+  <p class='message'>Welcome! Change tabs and come back to see me do something awesome.</p>
+  <p class='countDisplay'><span class='count'>1</span> <span>new <span class='visit'>visit</span> and counting</span></p>
+</div>
+<footer><small>Awesome picture from <a href="http://unsplash.com/"> https://unsplash.com/</a></small></footer>
+
+
+
+<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-38053205-1');ga('send','pageview');
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src='tab-change.js'></script>
+
+<script>
+
+function changeBackground(count){
+  console.log('count: ' + count)
+  return "(img/image"+count+".jpg)"
+}
+
+
+TabChange(function(change){
+  $('.countDisplay').show();
+  $('.count').show().html(change.count);
+  
+  if (change.count > 1){
+    $('.message').remove();
+  }
+
+  if (change.count > 0 && change.count < 7){
+    $('.visit').html('visits');
+    var img = changeBackground(change.count);
+    $('body').css('background-image', 'url' + img);
+  }
+  else {
+    $('body').css('background-image', 'url(img/image1.jpg)');
+  }
+  
+
+  if (change.count === 1){$('.message').html('Cool, right?');}
+  
+});
+
+</script>
+
+<img src="img/image1.jpg" class='preload'>
+<img src="img/image2.jpg" class='preload'>
+<img src="img/image3.jpg" class='preload'>
+<img src="img/image4.jpg" class='preload'>
+<img src="img/image5.jpg" class='preload'>
+<img src="img/image6.jpg" class='preload'>
+<img src="img/image7.jpg" class='preload'>
+</body>
+</html>
+  
