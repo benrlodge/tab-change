@@ -4,10 +4,12 @@ This tells you when someone returns to your webpage after changing browser tabs
 
 This is forked from http://code.tutsplus.com/articles/html5-page-visibility-api--cms-22021. I basically just wrapped it in a function and gave it a callback.
 
+Demo: [http://benrlodge.github.io/tab-change/](http://benrlodge.github.io/tab-change/)
+
 ### How to use:
 
 ```javascript
-TabChange(function(change){
+TabChange(function(){
   // tab has been changed
 });
 ```
